@@ -1,0 +1,132 @@
+/****************************************
+          Top Info Styles
+ ****************************************/
+.top-info {
+  width: 100%;
+  min-width: 1200px;
+  padding: $top-info-padding;
+  font-size: $topNav;
+
+  .border-lr {
+    border-left: 1px solid $light-grey;
+    border-right: 1px solid $light-grey;
+  }
+
+  i {
+    padding: 0 0.3em;
+  }
+
+  .left-section {
+    width: 220px;
+
+    ul {
+      display: flex;
+
+      li {
+        flex: 2;
+        text-align: center;
+
+        &:first-child {
+          flex: 1;
+          text-align: left;
+        }
+
+        i {
+          margin-left: .5em;
+        }
+
+        .dropdown-center {
+          position: relative;
+
+          .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 22px;
+            left: 0;
+            width: 140px;
+            background: $white;
+            border: 1px solid $light-grey;
+            text-align: center;
+            z-index: $hover-panel-z-index;
+
+            span {
+              display: block;
+              text-transform: uppercase;
+              font-weight: bold;
+              padding: $language-dropdown-title-padding;
+              //border-bottom: 1px solid $light-grey;
+            }
+
+            .ui-list {
+              display: flex;
+              flex-direction: column;
+              margin:0;
+
+              .ui-list-item {
+                a {
+                  display: block;
+                  text-align: center;
+                  color: $dark;
+                  padding: $language-dropdown-item-padding;
+
+                  &:hover {
+                    color: $light-red;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .currency-select {
+          display: none;
+        }
+
+        .sale-off {
+          font-weight: 600;
+          color: $light-red;
+          position: relative;
+
+          &:after {
+            content:"";
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+
+            border-style: solid;
+            border-width: 0 0 1px;
+            border-color: $light-red;
+          }
+        }
+      }
+    }
+  }
+
+  .right-section {
+    width: 470px;
+
+    ul {
+      display: flex;
+
+      li {
+        flex: 1;
+        text-align: center;
+
+        &:nth-child(2) {
+          flex: 1.5;
+        }
+
+        &:last-child {
+          flex: .75;
+          text-align: right;
+        }
+
+        i {
+          font-size: 1.2em;
+          margin-right: .2em;
+        }
+      }
+    }
+  }
+}

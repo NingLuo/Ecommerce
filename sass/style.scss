@@ -1,0 +1,217 @@
+@import "typography";
+@import "marginpadding";
+@import "colors";
+@import "topInfo";
+@import "navigation";
+@import "slider";
+
+body, html {
+  background: #fff;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+a, p, ul li {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  max-width: 1200px;
+}
+
+
+
+/****************************************
+          Search Block Styles
+ ****************************************/
+.search-block {
+  width: 100%;
+  font-size: $search-block;
+  padding: $search-block-padding;
+  //background: yellow;
+
+  .search-bar {
+    background: #fff;
+    border: 1px solid $light-grey;
+    min-width: 560px;
+    width: 100%; //6 columns
+    position: relative; //necessary for button
+    margin-left: -5%;
+
+    input[type=text] {
+      border: none;
+      box-shadow: none;
+      width: 55%;
+      margin: 0;
+      font-size: 1em;
+      padding:1em;
+      overflow: hidden;
+      position: relative;
+      left: 30%; // this is my way
+
+      &:focus {
+        outline: none; //no effect?
+      }
+    }
+
+    button {
+      background: $dark;
+      color: $white;
+      font-size: .8em;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      width: 15%;
+      min-width: 120px;
+      border-radius: 3px;
+      position: absolute; // absolute + top,bottom,right to achieve full height button
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      margin: 0;
+
+      &:hover, &:focus {
+        background: linear-gradient(lighten($dark, 15%), lighten($dark, 7%));
+        cursor: pointer;
+      }
+    }
+
+    .search-dropdown {
+      //background: pink;
+      background: $white;
+      font-weight: 400;
+      width: 30%;
+      padding: .5em 0 .5em 1.5em; // padding right 0 for the popurse of short border
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 10000;
+      user-select: none;
+
+      > span {
+        //background: red;
+        display: block;
+        width: 100%;
+        border-right: 1px solid $light-grey;
+        //min-width: 168px;
+        white-space: nowrap;
+
+        &:after {
+          content:"";
+          background: url('../images/caret-down.png') no-repeat top left;
+          height: 8px;
+          width: 10px;
+          position: absolute;
+          top: 43%;
+          right:9%;
+          //margin-top: -6px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        top: 105%;
+        left: -1px;
+        background: pink;
+        font-size: 1em;
+        width: 20em;
+        background: $white;
+        border: 1px solid $light-grey;
+        padding: .5em 0;
+      }
+
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 5px 18px;
+        line-height: 1.2em;
+        position: relative;
+
+        &:hover {
+          background: $light-grey;
+        }
+
+        &.selected {
+          background: $light-red;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .icon-list {
+    padding-right: 0;
+    text-align: right;
+    min-width: 270px;
+
+    ul {
+      //background: blue;
+      li {
+        //background: pink;
+        display: inline-block;
+        width: 15%;
+        margin-left: 1em;
+
+        .icon-wrapper {
+          position: relative;
+          width: 42px;
+          height: 42px;
+
+          i {
+            display: block;
+            height: auto;
+            width: auto;
+            border: 1px solid $light-grey;
+            border-radius: 50%;
+            padding:12px;
+          }
+
+          .badge {
+            background: $light-red;
+            color: $white;
+            width: auto;
+            height: auto;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0;
+            border-radius: 50%;
+            position: absolute;
+            top:-8px;
+            right: 0;
+          }
+        }
+
+        &:last-child {
+          width: 25%;
+          margin-left: -0.5em;
+
+          span {
+            font-weight: 600;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          i {
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}

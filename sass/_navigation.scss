@@ -1,0 +1,113 @@
+
+.main-nav {
+  width: 100%;
+  //height: 500px;
+  font-size: $main-nav-font;
+  //background: pink;
+
+  //Category
+  .category-section {
+    width: 270px; // have to do this to have it shorter than a column
+
+    .category-title {
+      background: $dark;
+      font-size: .9em;
+      color: $white;
+      text-transform: uppercase;
+      height: $nav-bar-height;
+      padding: $category-title-padding;
+
+      i {
+        padding:0 1em;
+      }
+    }
+
+    .category-body {
+      background: $white;
+      position: absolute;
+      width: 270px;
+      z-index: 999;
+
+      ul {
+
+        li {
+
+          a {
+            display: block;
+            font-size: .8em;
+            color: $dark;
+            border: 1px solid $light-grey;
+            border-top: none;
+            padding: .8em 1em;
+
+            &:hover {
+              color: $light-red;
+
+              span {
+                position: relative;
+                left: .5em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Navigation
+  .nav-section {
+    margin-left: -30px; // tightly connect to category section
+    font-size: .9em;
+    background: $light-red;
+    height: $nav-bar-height;
+    display: flex;
+    justify-content: space-between;
+
+    .nav-list {
+      height: 100%;
+      //background: red;
+
+      ul {
+        display: flex;
+        height: 100%;
+
+        li {
+          //background: blue;
+          //display: inline-block;
+          height: 100%;
+
+          a {
+            display: block;
+            color: $white;
+            //background: orange;
+            height: 100%;
+            padding: $nav-bar-padding;
+
+            &:hover {
+              background: lighten($light-red, 4%);
+              border-bottom: 2px solid $white;
+            }
+          }
+        }
+      }
+    }
+
+    .social-list {
+      height: 100%;
+      //background: blue;
+
+      ul {
+        display: flex;
+
+        li {
+          padding: $social-list-padding;
+          cursor: pointer;
+
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
